@@ -1,4 +1,4 @@
-#require 'spelunk/version'
+require 'spelunk/version'
 module Spelunk
   def self.methods_for object
     get_methods_for object, :""
@@ -22,4 +22,3 @@ private
   end
 
 end
-puts Spelunk.methods_for(Spelunk).inspect
