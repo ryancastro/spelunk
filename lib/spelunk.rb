@@ -12,6 +12,18 @@ module Spelunk
     get_methods_for object, :"public_"
   end
 
+  def self.args_for object, method
+    raise "Method name must be a symbol" unless method.to_sym
+    object.method(method).parameters
+  end
+
+  def self.dump_methods_for object
+    methods = self.methods_for object
+    methods.each do |method|
+      p "#{object.to_s}.#{method.to_s}: #{self.args_for object, method.to_sym}"
+    end
+  end
+
 private
   def self.get_methods_for object, type = :""
     base_object = object.class.eql?(Kernel.const_get(object.class.to_s)) ? Object : Object.new
