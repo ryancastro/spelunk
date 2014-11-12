@@ -3,11 +3,11 @@ all the default Ruby garbage you already know! It's like calling `.methods` on a
 but it returns information you actually care about.
 
 # Without Spelunk:
-  `puts Spelunk.methods.inspect
+  `p Spelunk.methods
    [... :===, :==, :<=>, :<, :<=, :>, :>=, :to_s, :inspect, :included_modules, :include?, :name, :ancestors, :instance_methods, :public_instance_methods, :protected_instance_methods, :private_instance_methods, :constants,...]`
 
 # With Spelunk
-  `puts Spelunk.methods_for Spelunk`
+  `p Spelunk.methods_for Spelunk`
   `[:methods_for, :private_methods_for, :public_methods_for]`
 
 
